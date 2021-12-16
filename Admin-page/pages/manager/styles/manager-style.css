@@ -1,0 +1,72 @@
+.edit-icon{
+    font-size: 24px;
+}
+.header-table{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-add {
+    width: 160px;
+   font-size: 16px;
+   font-weight: 600;
+   color: #fff;
+   cursor: pointer;
+   margin: 0;
+   height: 55px;
+   text-align:center;
+   border: none;
+   background-size: 300% 100%;
+   border-radius: 50px;
+   moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   -webkit-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
+   background-image: linear-gradient(
+      to right,
+      #25aae1,
+      #4481eb,
+      #04befe,
+      #3f86ed
+    );
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.input {
+    position: relative;
+}
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 3
+px
+ solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+}
+.input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.td-input{
+    padding: 4px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #000;
+    text-align: left;
+    outline: transparent;
+    width: 100%;
+    transition: border-color calc(var(--transition, 0.2) * 1s) ease;
+}
