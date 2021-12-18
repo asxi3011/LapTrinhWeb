@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Star Admin2 </title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../public/vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../public/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../public/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../../public/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="../../public/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="../../public/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../../public/vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../../public/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../../public/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../../../public/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../../../public/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../../../public/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../public/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="../../../public/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../public/images/favicon.png" />
-  <link rel="stylesheet" href="../../public/css/app.css">
+  <link rel="shortcut icon" href="../../../public/images/favicon.png" />
+  <link rel="stylesheet" href="../../../public/css/app.css">
 </head>
 
 <body>
@@ -32,11 +32,11 @@
             </button>
         </div>
         <div>
-            <a class="navbar-brand brand-logo" href="../../public/index.php">
-                <img src="../../public/images/logo.svg" alt="logo" />
+            <a class="navbar-brand brand-logo" href="../../../public/index.php">
+                <img src="../../../public/images/logo.svg" alt="logo" />
             </a>
-            <a class="navbar-brand brand-logo-mini" href="../../public/index.php">
-                <img src="../../public/images/logo-mini.svg" alt="logo" />
+            <a class="navbar-brand brand-logo-mini" href="../../../public/index.php">
+                <img src="../../../public/images/logo-mini.svg" alt="logo" />
             </a>
         </div>
     </div>
@@ -107,7 +107,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="../../public/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="../../../public/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -116,7 +116,7 @@
                     </a>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="../../public/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="../../../public/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -125,7 +125,7 @@
                     </a>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                            <img src="../../public/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                            <img src="../../../public/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                         </div>
                         <div class="preview-item-content flex-grow py-2">
                             <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -157,10 +157,10 @@
     </div>
 </nav>
 <div class="container-scroller">
-  <!-- partial:../../public/partials/_navbar.php -->
+  <!-- partial:../../../public/partials/_navbar.php -->
   <!-- partial -->
   <div class="container-fluid page-body-wrapper">
-    <!-- partial:../../public/partials/_settings-panel.php -->
+    <!-- partial:../../../public/partials/_settings-panel.php -->
     <div class="theme-setting-wrapper">
       <div id="settings-trigger"><i class="ti-settings"></i></div>
       <div id="theme-settings" class="settings-panel">
@@ -278,7 +278,7 @@
           </div>
           <ul class="chat-list">
             <li class="list active">
-              <div class="profile"><img src="../../public/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
               <div class="info">
                 <p>Thomas Douglas</p>
                 <p>Available</p>
@@ -286,7 +286,7 @@
               <small class="text-muted my-auto">19 min</small>
             </li>
             <li class="list">
-              <div class="profile"><img src="../../public/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
               <div class="info">
                 <div class="wrapper d-flex">
                   <p>Catherine</p>
@@ -297,7 +297,7 @@
               <small class="text-muted my-auto">23 min</small>
             </li>
             <li class="list">
-              <div class="profile"><img src="../../public/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
               <div class="info">
                 <p>Daniel Russell</p>
                 <p>Available</p>
@@ -305,7 +305,7 @@
               <small class="text-muted my-auto">14 min</small>
             </li>
             <li class="list">
-              <div class="profile"><img src="../../public/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
               <div class="info">
                 <p>James Richardson</p>
                 <p>Away</p>
@@ -313,7 +313,7 @@
               <small class="text-muted my-auto">2 min</small>
             </li>
             <li class="list">
-              <div class="profile"><img src="../../public/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
               <div class="info">
                 <p>Madeline Kennedy</p>
                 <p>Available</p>
@@ -321,7 +321,7 @@
               <small class="text-muted my-auto">5 min</small>
             </li>
             <li class="list">
-              <div class="profile"><img src="../../public/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+              <div class="profile"><img src="../../../public/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
               <div class="info">
                 <p>Sarah Graves</p>
                 <p>Available</p>
@@ -334,4 +334,4 @@
       </div>
     </div>
     <!-- partial -->
-    <!-- partial:../../public/partials/_sidebar.php -->
+    <!-- partial:../../../public/partials/_sidebar.php -->
