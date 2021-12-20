@@ -12,7 +12,7 @@ require "./Controllers/BaseController.php";
 
 if(!isset($_REQUEST['controller'])) {
 
-    $_REQUEST['controller'] = 'news';
+    $_REQUEST['controller'] = 'productcategory';
 
 }
 
