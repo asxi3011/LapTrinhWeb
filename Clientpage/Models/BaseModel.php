@@ -34,8 +34,9 @@ class BaseModel extends Database
 
         // $data = [];
         // $data = $stmt->fetch();
-        return $stmt->fetchAll();
 
+        return $stmt->fetchAll();
+        
         // return $data;
     }
 
