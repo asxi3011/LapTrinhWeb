@@ -11,10 +11,12 @@ class ProductController extends BaseController
 
     }
 
+
     public function index()
     {
         
         $this->view("product", [
+
 
         ]);
     }

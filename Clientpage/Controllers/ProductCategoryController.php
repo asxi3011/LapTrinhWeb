@@ -14,15 +14,18 @@ class ProductCategoryController extends BaseController
     }
 
 
+
     public function index() 
     {
        
         $allProduct = $this->ProductModel->getData();
 
+
         $allPC = $this->PCModel->getData();
 
         $this->view("index", [
             "allPC" => $allPC,
+
             "allProduct" => $allProduct,
         ]);
 
@@ -41,6 +44,7 @@ class ProductCategoryController extends BaseController
             "allPC" => $allPC,
             "productByPC" => $productByPC,
         ]);
+
     }
 
     public function productCategoryDetail() 

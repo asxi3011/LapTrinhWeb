@@ -82,7 +82,9 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.php">Trang chủ</a></li>
+
                             <li><a href="index.php?controller=ProductCategory&action=productShow">Shop</a>
+
                             </li>
                             <li><a href="./category_news.php">Bài viết</a>
                                 <ul class="header__menu__dropdown">

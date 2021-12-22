@@ -35,8 +35,10 @@ class BaseModel extends Database
         // $data = [];
         // $data = $stmt->fetch();
 
+
         return $stmt->fetchAll();
         
+
         // return $data;
     }
 
@@ -60,3 +62,4 @@ class BaseModel extends Database
 
     }
 }
+

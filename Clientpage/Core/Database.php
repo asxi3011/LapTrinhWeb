@@ -1,3 +1,4 @@
+
 <?php
 
 require("Core/Log.class.php");
@@ -273,3 +274,4 @@ class Database
 		#return $exception;
 	}			
 }
+
