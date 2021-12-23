@@ -352,7 +352,7 @@
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> <?=$blog["date_posted"]?></li>
                             </ul>
-                            <h5><a href="#"><?=$blog["bn_title"]?></a></h5>
+                            <h5><a href="index.php?controller=blog&action=blogDetail&bn_id=<?=$blog["bn_id"]?>"><?=$blog["bn_title"]?></a></h5>
                             <p><?=substr($blog["bn_content"], 0, 30)?></p>
                         </div>
                     </div>
