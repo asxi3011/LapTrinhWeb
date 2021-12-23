@@ -1,8 +1,9 @@
+
 <?php
 
 class ProductCategoryController extends BaseController 
 {
-    private $PCModel, $ProductModel;
+    private $PCModel, $ProductModel, $BlogModel;
 
     public function __construct()
     {
@@ -11,8 +12,10 @@ class ProductCategoryController extends BaseController
 
         $this->loadModel("ProductModel");
         $this->ProductModel = new ProductModel;
-    }
 
+        $this->loadModel("BlogModel");
+        $this->BlogModel = new BlogModel;
+    }
 
 
     public function index() 
@@ -20,13 +23,14 @@ class ProductCategoryController extends BaseController
        
         $allProduct = $this->ProductModel->getData();
 
-
         $allPC = $this->PCModel->getData();
+
+        $allblog = $this->BlogModel->getDataForIndex();
 
         $this->view("index", [
             "allPC" => $allPC,
-
             "allProduct" => $allProduct,
+            "allblog" => $allblog,
         ]);
 
     }
@@ -44,7 +48,6 @@ class ProductCategoryController extends BaseController
             "allPC" => $allPC,
             "productByPC" => $productByPC,
         ]);
-
     }
 
     public function productCategoryDetail() 
@@ -60,5 +63,6 @@ class ProductCategoryController extends BaseController
             "productOfCategory" => $productOfCategory,
         ]);
     }
+
 
 }

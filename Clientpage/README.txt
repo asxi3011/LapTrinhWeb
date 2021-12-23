@@ -1,6 +1,7 @@
 <?php
 echo "<pre>";
-var_dump($);
+var_dump($data[""]);
+
 echo "</pre>";
 ?>
 exit();
