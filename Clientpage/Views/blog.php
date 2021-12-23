@@ -59,7 +59,7 @@
                                     </ul>
                                     <h5><a href="index.php?controller=blog&action=blogDetail&bn_id=<?=$blog["bn_id"]?>&author_id=<?=$blog["author_id"]?>"><?=$blog["bn_title"]?></a></h5>
                                     <div class="blog-content"><?=substr($blog["bn_content"], 0, 60)?>...</div>
-                                    <a href="index.php?controller=blog&action=blogDetail&bn_id=<?=$blog["bn_id"]?>" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                    <a href="index.php?controller=blog&action=blogDetail&bn_id=<?=$blog["bn_id"]?>&author_id=<?=$blog["author_id"]?>" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
