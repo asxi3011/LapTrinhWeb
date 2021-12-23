@@ -1,14 +1,18 @@
+
     <?php require "Views/layouts/header.php"; ?>
 
     <!-- Hero Section Begin -->
     <section class="hero">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
+
                             <span>Danh mục</span>
+
                         </div>
                         <ul>
                             <?php foreach($data["allPC"] as $pc) : ?>
@@ -42,6 +46,7 @@
                                 <span>Hỗ trợ 24/7 time</span>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -49,11 +54,13 @@
     </section>
     <!-- Hero Section End -->
 
+
     <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
+
                     <?php foreach($data["allPC"] as $pc) : ?>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/adidaslego.jpg">
@@ -81,15 +88,18 @@
                             <!-- <?php foreach($data["allPC"] as $pc) : ?>
                             <li data-filter=".oranges"><?=ucfirst($pc["pc_name"])?></li>
                             <?php endforeach ?> -->
+
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
+
                 <?php foreach($data["allProduct"] as $product) :?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="public/img/<?=$product["product_img"]?>">
+
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -97,12 +107,14 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
+
                             <h6><a href="index.php?controller=product&action=productDetail&product_id=<?=$product["product_id"]?>"><?=$product["product_name"]?></a></h6>
                             <h5><?=number_format($product["product_price"])?> đ</h5>
                         </div>
                     </div>
                 </div>
                 <?php endforeach ?>
+
             </div>
         </div>
     </section>
@@ -129,6 +141,7 @@
 
     <!-- Latest Product Section Begin -->
     <!-- <section class="latest-product spad">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -328,6 +341,7 @@
                 </div>
             </div>
         </div>
+
     </section> -->
     <!-- Latest Product Section End -->
 
@@ -358,9 +372,11 @@
                     </div>
                 </div>
                 <?php endforeach ?>
+
             </div>
         </div>
     </section>
     <!-- Blog Section End -->
 
     <?php require "Views/layouts/footer.php"; ?>
+

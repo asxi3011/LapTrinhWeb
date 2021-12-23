@@ -16,4 +16,5 @@ class ProductCategoryModel extends BaseModel
     {
         return $this->find($this->table, "pc_", $id);
     }
+
 }

@@ -11,6 +11,7 @@ class BaseModel extends Database
 
     // Get all data as column name
     public function selectData($table, $select = ['*'], $orderBys = [], $where = "1", $limit = 100)
+
     {
 
         $columns = implode(',', $select);
@@ -21,6 +22,7 @@ class BaseModel extends Database
             $sql = "SELECT ${columns} from ${table} WHERE ${where} ORDER BY ${orderByString} LIMIT ${limit}";
         }else{
             $sql = "SELECT ${columns} from ${table} WHERE ${where} LIMIT ${limit}";
+
         }
 
         //Tạo Prepared Statement
@@ -33,6 +35,7 @@ class BaseModel extends Database
         $stmt->execute();
 
         return $stmt->fetchAll();
+
     }
 
     // Get 1 record of table
@@ -71,3 +74,4 @@ class BaseModel extends Database
         return $stmt->fetchAll();
     }
 }
+

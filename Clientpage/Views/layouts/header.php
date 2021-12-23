@@ -85,6 +85,7 @@
                             <li><a href="index.php?controller=ProductCategory&action=productShow">Shop</a>
                             </li>
                             <li><a href="index.php?controller=blog&action=index">Bài viết</a>
+
                             </li>
                             <li><a href="./contact.php">Liên hệ</a></li>
                         </ul>
