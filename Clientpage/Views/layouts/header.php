@@ -84,11 +84,7 @@
                             <li class="active"><a href="./index.php">Trang chủ</a></li>
                             <li><a href="index.php?controller=ProductCategory&action=productShow">Shop</a>
                             </li>
-                            <li><a href="./category_news.php">Bài viết</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./category_news.php">Công sở</a></li>
-                                    <li><a href="./category_news.php">Thể thao</a></li>
-                                </ul>
+                            <li><a href="index.php?controller=blog&action=index">Bài viết</a>
                             </li>
                             <li><a href="./contact.php">Liên hệ</a></li>
                         </ul>

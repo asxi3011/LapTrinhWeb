@@ -2,7 +2,7 @@
 
 class ProductCategoryController extends BaseController 
 {
-    private $PCModel, $ProductModel;
+    private $PCModel, $ProductModel, $BlogModel;
 
     public function __construct()
     {
@@ -11,6 +11,9 @@ class ProductCategoryController extends BaseController
 
         $this->loadModel("ProductModel");
         $this->ProductModel = new ProductModel;
+
+        $this->loadModel("BlogModel");
+        $this->BlogModel = new BlogModel;
     }
 
 
@@ -21,9 +24,12 @@ class ProductCategoryController extends BaseController
 
         $allPC = $this->PCModel->getData();
 
+        $allblog = $this->BlogModel->getDataForIndex();
+
         $this->view("index", [
             "allPC" => $allPC,
             "allProduct" => $allProduct,
+            "allblog" => $allblog,
         ]);
 
     }
