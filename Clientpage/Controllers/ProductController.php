@@ -11,12 +11,13 @@ class ProductController extends BaseController
 
     }
 
-    public function index() 
-    {
-        $allProduct = $this->ProductModel->getData();
 
-        return $this->view("product-detail", [
-            "allProduct" => $allProduct,
+    public function index()
+    {
+        
+        $this->view("product", [
+
+
         ]);
     }
 

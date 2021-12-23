@@ -13,15 +13,38 @@ class ProductCategoryController extends BaseController
         $this->ProductModel = new ProductModel;
     }
 
+
+
     public function index() 
     {
+       
+        $allProduct = $this->ProductModel->getData();
+
+
         $allPC = $this->PCModel->getData();
 
         $this->view("index", [
             "allPC" => $allPC,
+
+            "allProduct" => $allProduct,
         ]);
 
+    }
+
+    public function productShow()
+    {
+        $pc_id = $_GET["pc_id"] ?? "1";
+        $productByPC = $this->ProductModel->getDataByPCId($pc_id);
+
+        $allPC = $this->PCModel->getData();
+
         
+        
+        $this->view("product", [
+            "allPC" => $allPC,
+            "productByPC" => $productByPC,
+        ]);
+
     }
 
     public function productCategoryDetail() 
