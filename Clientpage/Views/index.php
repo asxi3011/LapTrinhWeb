@@ -93,7 +93,7 @@
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="index.php?controller=product&action=addToCart&product_id=<?=$product["product_id"]?>" type="submit"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -352,7 +352,7 @@
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> <?=$blog["date_posted"]?></li>
                             </ul>
-                            <h5><a href="index.php?controller=blog&action=blogDetail&bn_id=<?=$blog["bn_id"]?>&author_id=<?=$blog["author_id"]?>"><?=$blog["bn_title"]?></a></h5>
+                            <h5><a href="#"><?=$blog["bn_title"]?></a></h5>
                             <p><?=substr($blog["bn_content"], 0, 30)?></p>
                         </div>
                     </div>

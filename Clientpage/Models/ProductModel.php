@@ -21,4 +21,9 @@ class ProductModel extends BaseModel
         return $this->selectData(self::TABLE, ["*"], [], "pc_id = ${pc_id}");
         
     }
+
+    public function getDataByIds(array $product_ids)
+    {
+        return $this->getProducts($product_ids);
+    }
 }

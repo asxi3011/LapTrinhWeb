@@ -1,12 +1,11 @@
 <?php
 
-
-
 require "./Core/Database.php";
 
 require "./Models/BaseModel.php";
 
 require "./Controllers/BaseController.php";
+
 
 
 
@@ -35,4 +34,3 @@ $controllerObj = new $controllerName;
 
 
 $controllerObj->$actionName();
-?>

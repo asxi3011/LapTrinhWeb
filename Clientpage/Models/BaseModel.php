@@ -38,7 +38,7 @@ class BaseModel extends Database
     // Get 1 record of table
     public function find($table, $nameid, $id) {
         $sql = "SELECT * from ${table} Where ".$nameid."id = ${id} limit 1";
-
+ 
         //Tạo Prepared Statement
         $stmt = $this->conn->prepare($sql);
 
@@ -59,6 +59,23 @@ class BaseModel extends Database
     {
         $sql = "SELECT author_name, author_role, author_avatar FROM blog_news JOIN author ON blog_news.author_id = author.author_id WHERE blog_news.author_id = ${author_id}";
         
+        //Tạo Prepared Statement
+        $stmt = $this->conn->prepare($sql);
+
+        //Thiết lập kiểu dữ liệu trả về
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        //Gán giá trị và thực thi
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function getProducts(array $product_ids)
+    {
+        $ids = implode(',', $product_ids);
+        $sql = "select * from product where product_id in ($ids)";
+
         //Tạo Prepared Statement
         $stmt = $this->conn->prepare($sql);
 

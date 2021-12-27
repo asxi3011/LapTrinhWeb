@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -93,7 +94,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                            <li><a href="index.php?controller=product&action=shopping"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$0.00</span></div>
                     </div>
@@ -104,5 +105,4 @@
             </div>
         </div>
     </header>
-    
     

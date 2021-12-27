@@ -2,13 +2,15 @@
 
 class ProductController extends BaseController 
 {
-    private $ProductModel;
+    private $ProductModel, $session;
 
     public function __construct()
     {
         $this->loadModel("ProductModel");
         $this->ProductModel = new ProductModel;
 
+        require "Helper/Session.php";
+        $this->session = new Session;
     }
 
     public function index()
@@ -30,4 +32,28 @@ class ProductController extends BaseController
         ]);
     }
 
-}
+    public function addToCart()
+    {
+        $product_id = $_GET["product_id"];
+
+        $arr = $this->ProductModel->getDataByIds([$product_id]);
+
+        $order = [];
+        foreach($arr as $item) {
+            $order = $item;
+        }
+        $this->view("shopping-cart", [
+            "cart" => $order,
+        ]);
+    }
+
+    public function delete()
+    {
+        $destroy = session_destroy();
+        $this->view("shopping-cart", [
+            $destroy
+        ]);
+        // return $productdel;
+        // header("Location: index.php?controller=product&action=shopping");
+    }
+} 
