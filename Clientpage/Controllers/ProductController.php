@@ -49,9 +49,10 @@ class ProductController extends BaseController
 
     public function delete()
     {
-        $destroy = session_destroy();
+        $product_id = $_GET["product_id"] ?? null;
+        $delete = $this->session->session_delete($_SESSION["cart"][$product_id]);
         $this->view("shopping-cart", [
-            $destroy
+            $delete
         ]);
         // return $productdel;
         // header("Location: index.php?controller=product&action=shopping");

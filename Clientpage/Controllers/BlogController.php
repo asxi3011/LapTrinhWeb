@@ -1,6 +1,6 @@
 <?php
 
-class BlogController extends BaseController 
+class BlogController extends BaseController
 {
     private $BlogModel, $BCModel;
 
@@ -9,8 +9,8 @@ class BlogController extends BaseController
         $this->loadModel("BlogModel");
         $this->BlogModel = new BlogModel;
 
-        $this->loadModel("BlogCategoryModel");
-        $this->BCModel = new BlogCategoryModel;
+        $this->loadModel("BlogcategoryModel");
+        $this->BCModel = new BlogcategoryModel;
     }
 
     public function index()
@@ -19,9 +19,9 @@ class BlogController extends BaseController
 
         $allBC = $this->BCModel->getData();
 
-        if($bc_id != null) {
+        if ($bc_id != null) {
             $blogByBC = $this->BlogModel->getDataByPCId($bc_id);
-        }else {
+        } else {
             $blogByBC = $this->BlogModel->getData();
         }
 
@@ -31,7 +31,7 @@ class BlogController extends BaseController
         ]);
     }
 
-    public function blogDetail() 
+    public function blogDetail()
     {
         $bn_id = $_GET["bn_id"];
         $author_id = $_GET["author_id"];
@@ -39,11 +39,10 @@ class BlogController extends BaseController
         $blog = $this->BlogModel->findById($bn_id);
 
         $author = $this->BlogModel->joinAuthor($author_id);
-        
+
         return $this->view("blog-details", [
             "blog" => $blog,
             "author" => $author,
         ]);
     }
-
 }

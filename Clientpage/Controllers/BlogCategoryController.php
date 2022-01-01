@@ -1,30 +1,27 @@
 <?php
 
-class BlogCategoryController extends BaseController 
+class BlogcategoryController extends BaseController
 {
     private $BCModel;
 
     public function __construct()
     {
-        $this->loadModel("BlogCategoryModel");
-        $this->BCModel = new BlogCategoryModel;
-
+        $this->loadModel("BlogcategoryModel");
+        $this->BCModel = new BlogcategoryModel;
     }
 
     public function categoryShow()
     {
-       
     }
 
-    public function blogDetail() 
+    public function blogDetail()
     {
         $bn_id = $_GET["bn_id"];
 
         $blog = $this->BCModel->findById($bn_id);
-        
+
         return $this->view("blog-detail", [
             "blog" => $blog,
         ]);
     }
-
 }

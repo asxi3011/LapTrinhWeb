@@ -87,4 +87,20 @@ class BaseModel extends Database
 
         return $stmt->fetchAll();
     }
+
+    public function searchByName($table, $tableJoin, $id, $pc_name, $category)
+    {
+        $sql = "select * from $table join $tableJoin on $table.$id = $tableJoin.$id where $table.$pc_name like '%$category%'";
+        
+        //Tạo Prepared Statement
+        $stmt = $this->conn->prepare($sql);
+
+        //Thiết lập kiểu dữ liệu trả về
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        //Gán giá trị và thực thi
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 }

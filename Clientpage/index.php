@@ -9,17 +9,15 @@ require "./Controllers/BaseController.php";
 
 
 
-if(!isset($_REQUEST['controller'])) {
+if (!isset($_REQUEST['controller'])) {
 
     $_REQUEST['controller'] = 'productcategory';
-
 }
 
 
 
-$controllerName = ucfirst((strtolower($_REQUEST['controller'])). 'Controller') ?? 'news' . 'Controller';
-
-
+$controllerName = ucfirst((strtolower($_REQUEST['controller'])) . 'Controller');
+echo $controllerName;
 
 $actionName = $_REQUEST['action'] ?? 'index';
 

@@ -24,12 +24,12 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form action="index.php?controller=productcategory&action=searchCategory" method="post">
                                 <div class="hero__search__categories">
                                     Tất cả thể loại
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="Hôm nay bạn muốn tìm gì?">
+                                <input type="text" name="category" placeholder="Hôm nay bạn muốn tìm gì?">
                                 <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
@@ -56,8 +56,8 @@
                 <div class="categories__slider owl-carousel">
                     <?php foreach($data["allPC"] as $pc) : ?>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/adidaslego.jpg">
-                            <h5><a href="#"><?=$pc["pc_name"]?></a></h5>
+                        <div class="categories__item set-bg" data-setbg="public/img/adidaslego.jpg">
+                            <h5><a href="index.php?controller=productcategory&action=productCategoryDetail&pc_id=<?= $pc["pc_id"] ?>"><?=$pc["pc_name"]?></a></h5>
                         </div>
                     </div>
                     <?php endforeach ?>

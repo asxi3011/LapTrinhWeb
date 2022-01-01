@@ -35,11 +35,12 @@
                         </thead>
                         <tbody>
                             <?php
-                            $product_id = $_GET["product_id"];
-                            // if(!empty($_SESSION["cart"])) {
-                            //     if(array_key_exists($product_id, $_SESSION["cart"]["product_id"]));
-                            // }
-                            $_SESSION["cart"][] = $data["cart"];
+                            $product_id = $_GET["product_id"] ?? null;
+                            if(!empty($_SESSION["cart"])) {
+                                if(array_key_exists($product_id, $_SESSION["cart"]));
+                            }else{
+                                $_SESSION["cart"][] = $data["cart"];
+                            }
                             ?>
                             <?php
                             $qty = 1;
@@ -111,7 +112,7 @@
 <?php require "Views/layouts/footer.php" ?>
 <?php
 echo "<pre>";
-// var_dump($_SESSION["cart"][0]["product_id"]);
-// session_destroy();
+var_dump($_SESSION["cart"]);
+session_destroy();
 echo "</pre>";
 ?>
