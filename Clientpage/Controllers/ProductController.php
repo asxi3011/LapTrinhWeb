@@ -2,7 +2,7 @@
 
 class ProductController extends BaseController 
 {
-    private $ProductModel;
+    private $ProductModel, $session;
 
     public function __construct()
     {
@@ -30,5 +30,6 @@ class ProductController extends BaseController
         ]);
     }
 
+    
 
-}
+} 

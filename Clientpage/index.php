@@ -1,27 +1,21 @@
 <?php
 
-
-
 require "./Core/Database.php";
-
 require "./Models/BaseModel.php";
 
 require "./Controllers/BaseController.php";
 
 
 
-if(!isset($_REQUEST['controller'])) {
+
+if (!isset($_REQUEST['controller'])) {
 
     $_REQUEST['controller'] = 'productcategory';
-
-
 }
 
 
 
-$controllerName = ucfirst((strtolower($_REQUEST['controller'])). 'Controller') ?? 'news' . 'Controller';
-
-
+$controllerName = ucfirst((strtolower($_REQUEST['controller'])) . 'Controller');
 
 $actionName = $_REQUEST['action'] ?? 'index';
 
@@ -36,4 +30,3 @@ $controllerObj = new $controllerName;
 
 
 $controllerObj->$actionName();
-?>

@@ -2290,7 +2290,6 @@ ol {
 .blog__item__pic img {
 	min-width: 100%;
 	min-height: 245px !important;
-
 }
 
 .blog__item__text {
@@ -3492,4 +3491,3 @@ ol {
  	overflow: hidden;
  	text-overflow: ellipsis;
 }
-

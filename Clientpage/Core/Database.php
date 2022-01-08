@@ -1,4 +1,3 @@
-
 <?php
 
 require("Core/Log.class.php");
@@ -55,7 +54,7 @@ class Database
 	*	3. Tries to connect to the database.
 	*	4. If connection failed, exception is displayed and a log file gets created.
 	*/
-		protected function Connect()
+		public function Connect()
 		{
             $hostname = $this->hostname;
             $database = $this->database;
@@ -77,6 +76,7 @@ class Database
 				
 				# Connection succeeded, set the boolean to true.
 				$this->bConnected = true;
+				// echo "Connection succeeded";
 			}
 			catch (PDOException $e) 
 			{

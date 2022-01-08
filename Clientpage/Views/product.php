@@ -2,18 +2,15 @@
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-
                         <h2>Organi Shop</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
                             <span>Shop</span>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -198,7 +195,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
@@ -207,14 +203,12 @@
                                     <select>
                                         <option value="0">Default</option>
                                         <option value="0">Default</option>
-
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
                                     <h6><span><?php echo count($data["productByPC"]); ?></span> Products found</h6>
-
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -261,7 +255,6 @@
                         echo $page->getPagination();
                         ?>
                         <!-- <a href="#"><i class="fa fa-long-arrow-right"></i></a> -->
-
                     </div>
                 </div>
             </div>
@@ -270,4 +263,3 @@
     <!-- Product Section End -->
 
     <?php require "Views/layouts/footer.php" ?>
-
