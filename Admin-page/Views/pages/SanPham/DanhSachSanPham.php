@@ -43,7 +43,7 @@
                             </td>
                           <td class="py-1">
                             <img src="../Clientpage/public/img/<?=$product["product_img"]?>" alt="">
-                          <?=$product["product_img"]?>
+                          
                           </td>
                           
                           <td>

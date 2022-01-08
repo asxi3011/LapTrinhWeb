@@ -98,7 +98,7 @@
                 <?php foreach($data["allProduct"] as $product) :?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="public/img/<?=$product["product_img"]?>">
+                        <div class="featured__item__pic set-bg" data-setbg="../Admin-page/uploads<?=$product["product_img"]?>">
 
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
