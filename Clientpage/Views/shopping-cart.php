@@ -42,7 +42,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th></th>
+                                    <th>action</th>
                                     <th></th>
                                 </tr>
                             </thead>

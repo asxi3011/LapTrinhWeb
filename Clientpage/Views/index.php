@@ -56,7 +56,7 @@
                 <div class="categories__slider owl-carousel">
                     <?php foreach ($data["allPC"] as $pc) : ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="public/img/adidaslego.jpg">
+                            <div class="categories__item set-bg" style="background-image: url('../Admin-page/uploads/<?=$pc["img"]?>')" data-setbg="../Admin-page/uploads/<?=$pc["img"]?>">
                                 <h5><a href="index.php?controller=productcategory&action=productCategoryDetail&pc_id=<?= $pc["pc_id"] ?>"><?= $pc["pc_name"] ?></a></h5>
                             </div>
                         </div>
@@ -85,11 +85,12 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row featured__filter">
                 <?php foreach ($data["allProduct"] as $product) : ?>
                     <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                         <div class="featured__item">
-                            <div class="featured__item__pic set-bg" data-setbg="public/img/<?= $product["product_img"] ?>">
+                            <div class="featured__item__pic set-bg" style="background-image: url('uploads/<?=$product["product_img"]?>')" data-setbg="uploads/<?=$product["product_img"]?>">
                                 <ul class="featured__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
