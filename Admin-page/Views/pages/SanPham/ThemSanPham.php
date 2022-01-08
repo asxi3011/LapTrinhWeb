@@ -35,6 +35,10 @@
                       <input type="text" name="price" class="form-control" id="inputName" placeholder="Nhập giá sản phẩm">
                     </div>
                     <div class="form-group">
+                      <label for="inputQuantity">Tồn kho</label>
+                      <input type="text" name="quantity" class="form-control" id="inputQuantity" placeholder="Nhập số lượng hiện có sản phẩm">
+                    </div>
+                    <div class="form-group">
                       <label for="inputPhone">Mô tả</label>
                       <div class="form-floating">
                         <textarea name="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>

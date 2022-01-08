@@ -81,6 +81,7 @@ class ProductController extends BaseController
                     "product_name"=> $_POST["name"],
                     "product_description"=> $_POST["description"],
                      "product_img"=> $_FILES["hinh"]["name"],
+                     "quantity"=> $_POST["quantity"],
                      "product_price"=> $_POST["price"],
                 ];
                 $this->ProductModel->insertProduct($data);

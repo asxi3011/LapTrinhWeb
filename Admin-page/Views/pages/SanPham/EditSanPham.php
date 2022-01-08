@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group">
                               <label for="inputAddress">Tồn kho</label>
-                              <input type="text"  class="form-control" value="30" id="inputAddress" placeholder="Nhập Thương hiệu">
+                              <input type="text"  class="form-control" value="<?=$product["quantity"]?>" id="inputAddress" placeholder="Nhập Thương hiệu">
                             </div>
                             <div class="form-group">
                               <label for="inputPhone">Mô tả</label>

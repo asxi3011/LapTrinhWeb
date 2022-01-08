@@ -67,7 +67,7 @@
                                 Tồn kho
                              </td>
                           <td >
-                             30
+                          <?=$product["quantity"]?>
                           </td>
                         </tr>
                         <tr>
