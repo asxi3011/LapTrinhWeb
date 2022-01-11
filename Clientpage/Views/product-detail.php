@@ -1,4 +1,4 @@
-    <?php include 'Views/layouts/header.php'?>
+    <?php include 'Views/layouts/header.php' ?>
 
     <!-- Hero Section Begin -->
     <!-- <section class="hero hero-normal">
@@ -79,24 +79,19 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large"
-                                src="public/img/<?=$data["product"]["product_img"]?>" alt="">
+                            <img class="product__details__pic__item--large" src="../Admin-page/uploads/<?= $data["product"]["product_img"] ?>" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="img/product/details/thumb-3.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-2.jpg" src="img/product/details/thumb-1.jpg" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-3.jpg" src="img/product/details/thumb-2.jpg" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-5.jpg" src="img/product/details/thumb-3.jpg" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-4.jpg" src="img/product/details/thumb-4.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
-                        <h3><?=$data["product"]["product_name"]?></h3>
+                        <h3><?= $data["product"]["product_name"] ?></h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -105,8 +100,8 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price"><?=number_format($data["product"]["product_price"])?> ₫</div>
-                        <p><?=$data["product"]["product_description"]?></p>
+                        <div class="product__details__price"><?= number_format($data["product"]["product_price"]) ?> ₫</div>
+                        <p><?= $data["product"]["product_description"] ?></p>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -114,7 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <!-- <a href="" class="primary-btn add-to-cart">ADD TO CARD</a> -->
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <!-- <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
@@ -217,7 +212,7 @@
     <!-- Product Details Section End -->
 
     <!-- Related Product Section Begin -->
-    <section class="related-product">
+    <!-- <section class="related-product">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -244,7 +239,21 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Related Product Section End -->
 
-    <?php include 'Views/layouts/footer.php'?>
+    <?php include 'Views/layouts/footer.php' ?>
+    <script>
+        $('.add-to-cart').on('click', function(e) {
+            e.preventDefault();
+
+            var $btn = $(this);
+            var id = $btn.parent().find('.product-id').val();
+            var qty = 1;
+
+            var $form = $('<form action="index.php?controller=cart&action=cart" method="post" />').html('<input type="hidden" name="add" value="add"><input type="hidden" name="idAdd" value="' + id + '"><input type="hidden" name="qty" value="' + qty + '">');
+
+            $('body').append($form);
+            $form.submit();
+        });
+    </script>
