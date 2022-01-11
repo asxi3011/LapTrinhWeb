@@ -51,7 +51,7 @@
                                     <?php foreach ($items as $item) : ?>
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="public/img/<?= $item["attributes"]["image"] ?>" alt="">
+                                                <img src="../Admin-page/uploads/<?= $item["attributes"]["image"] ?>" alt="">
                                                 <h5>
                                                     <?= $item["attributes"]["name"] ?>
                                                 </h5>
