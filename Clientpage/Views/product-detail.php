@@ -114,7 +114,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <a href="#" class="primary-btn">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <!-- <ul>

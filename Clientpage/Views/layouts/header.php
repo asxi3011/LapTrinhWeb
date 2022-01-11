@@ -86,16 +86,16 @@
                             </li>
                             <li><a href="index.php?controller=blog&action=index">Bài viết</a>
                             </li>
-                            <li><a href="./contact.php">Liên hệ</a></li>
+                            <!-- <li><a href="./contact.php">Liên hệ</a></li> -->
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="index.php?controller=cart&action=cart"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                            <li><a href="index.php?controller=cart&action=cart"><i class="fa fa-shopping-bag"></i> <span><?= $data["countItems"] ?></span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$0.00</span></div>
+                        <div class="header__cart__price">item: <span><?= number_format($data["total"]) ?? "0" ?> đ</span></div>
                     </div>
                 </div>
             </div>
@@ -104,4 +104,3 @@
             </div>
         </div>
     </header>
-    

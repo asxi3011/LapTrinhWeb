@@ -42,7 +42,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>action</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -116,7 +116,7 @@
                         <li>Subtotal <span><?= number_format($total) ?></span></li>
                         <li>Total <span><?= number_format($total) ?></span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <button class="primary-btn btn-checkout" data-total="<?= $total ?>">PROCEED TO CHECKOUT</button>
                 </div>
             </div>
         </div>
@@ -153,6 +153,15 @@
 
             var $form = $('<form action="index.php?controller=cart&action=cart" method="post" />').html('<input type="hidden" name="empty" value="">');
 
+            $('body').append($form);
+            $form.submit();
+        });
+
+        $('.btn-checkout').on('click', function() {
+
+            var total = $(this).attr('data-total');
+
+            var $form = $('<form action="index.php?controller=cart&action=checkout" method="post" />').html('<input type="hidden" name="checkout" value=""><input type="hidden" name="total" value="' + total + '">');
             $('body').append($form);
             $form.submit();
         });
