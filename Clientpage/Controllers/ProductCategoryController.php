@@ -60,6 +60,7 @@ class ProductcategoryController extends BaseController
     public function ProductcategoryDetail()
     {
         $pc_id = $_GET["pc_id"];
+        $total = $this->cartModel->getTotal();
 
         $pc = $this->PCModel->findById($pc_id);
 
@@ -67,6 +68,7 @@ class ProductcategoryController extends BaseController
 
         return $this->view("product-category-detail", [
             "pc" => $pc,
+            "total" => $total,
             "productOfCategory" => $productOfCategory,
         ]);
     }
