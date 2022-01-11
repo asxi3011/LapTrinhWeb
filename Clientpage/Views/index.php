@@ -10,7 +10,7 @@
                             <i class="fa fa-bars"></i>
                             <span>Danh mục</span>
                         </div>
-                        <ul>
+                        <ul style="display: none">
                             <?php foreach ($data["allPC"] as $pc) : ?>
                                 <li>
                                     <a href="index.php?controller=productcategory&action=productCategoryDetail&pc_id=<?= $pc["pc_id"] ?>">
