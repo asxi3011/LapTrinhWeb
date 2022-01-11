@@ -59,13 +59,7 @@
                                     <li><a href="#">Tiếng Anh</a></li>
                                 </ul>
                             </div>
-                            <div class="header__top__right__auth">
-                                <a href="./login.php"><i class="fa fa-user"></i> Đăng nhập</a>
-                            </div>
-                            /
-                            <div class="header__top__right__auth">
-                                <a href="./register.php"> Đăng ký</a>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -75,7 +69,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.php"><img src="img/nike-logo.jpg" alt=""></a>
+                        <a href="./index.php"><img src="public/nike-logo.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -95,7 +89,13 @@
                         <ul>
                             <li><a href="index.php?controller=cart&action=cart"><i class="fa fa-shopping-bag"></i> <span><?= $data["countItems"] ?></span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span><?= number_format($data["total"]) ?? "0" ?> đ</span></div>
+                        <div class="header__cart__price">item: <span><?php
+                        if(isset($data["total"])){
+                            echo(number_format($data["total"]));
+                        }else{
+                            echo(number_format(0));
+                        }
+                         ?> đ</span></div>
                     </div>
                 </div>
             </div>

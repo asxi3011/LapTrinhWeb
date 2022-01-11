@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__about__logo">
-                        <a href="../index.php"><img src="img/nike(logo).png" style="width: 300px; height: 100px; margin-left: auto; margin-right: auto;" alt=""></a>
+                        <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/2560px-Logo_NIKE.svg.png" style="width: 300px; height: 100px; margin-left: auto; margin-right: auto;" alt=""></a>
                     </div>
                     <ul>
                         <li>Địa chỉ: 180 Cao Lỗ Phường 4,Quận 8</li>
