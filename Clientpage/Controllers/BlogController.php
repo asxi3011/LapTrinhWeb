@@ -19,7 +19,6 @@ class BlogController extends BaseController
     public function index()
     {
         $bc_id = $_GET["bc_id"] ?? null;
-
         $total = $this->cartModel->getTotal();
         $total = $this->cartModel->getTotal();
         $allBC = $this->BCModel->getData();

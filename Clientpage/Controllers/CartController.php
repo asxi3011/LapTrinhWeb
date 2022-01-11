@@ -10,7 +10,7 @@ class CartController extends BaseController
         $this->loadModel('CartModel');
         $this->cartModel = new CartModel;
 
-        $this->loadModel("productModel");
+        $this->loadModel("ProductModel");
         $this->productModel = new productModel;
 
         $this->loadModel("OrderModel");

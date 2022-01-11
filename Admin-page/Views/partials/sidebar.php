@@ -14,7 +14,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../products/products-manager.php">
+            <a class="nav-link" href="?controller=order">
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Quản lý đơn hàng</span>
             </a>
@@ -29,8 +29,8 @@
             </a>
             <div class="collapse" id="ui-nguoidung">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../NguoiDung/DanhSachNguoiDung.php">Danh sách người dùng</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../NguoiDung/ThemNguoiDung.php">Thêm người dùng</a></li>
+                <li class="nav-item"> <a class="nav-link" href="?controller=user">Danh sách người dùng</a></li>
+                <li class="nav-item"> <a class="nav-link" href="?controller=user&action=add">Thêm người dùng</a></li>
               </ul>
             </div>
           </li>
