@@ -79,7 +79,7 @@ class CartController extends BaseController
 
     public function deleteOne($id)
     {
-        return $this->cartModel->delete($id);
+        return $this->cartModel->deleteOne($id);
     }
 
     public function destroy()
@@ -113,6 +113,9 @@ class CartController extends BaseController
     public function placeOrder()
     {
         if (isset($_POST['placeOrder'])) {
+            $totalAll = $this->cartModel->getTotal();
+
+
             $order_id = $this->generateString(10);
             $order_test = $order_id;
             $cus_name = $_POST['cus_name'];
@@ -141,8 +144,19 @@ class CartController extends BaseController
                 $this->orderDetailModel->insertOrderDetail($id_order_selected, $item["product_name"], $item["product_qty"],  $item["product_price"], $item["product_total"]);
             }
 
-            echo ("Đặt hàng thành công");
             $this->cartModel->deleteAll();
+
+            $this->view("bills", [
+                "total" => $item["product_total"],
+                "order_id" => $order_id,
+                "cus_name" => $cus_name,
+                "address" => $address,
+                "email" => $email,
+                "phone" => $phone,
+                "notes" => $notes,
+                "arr" => $arr,
+                "totalAll" => $totalAll,
+            ]);
         }
     }
 }

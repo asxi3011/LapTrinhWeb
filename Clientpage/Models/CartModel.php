@@ -36,7 +36,7 @@ class CartModel extends BaseModel
         return $this->cart->clear();
     }
 
-    public function delete($id)
+    public function deleteOne($id)
     {
         return $this->cart->remove($id);
     }
