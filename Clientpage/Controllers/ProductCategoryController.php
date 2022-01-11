@@ -14,8 +14,10 @@ class ProductcategoryController extends BaseController
 
         $this->loadModel("BlogModel");
         $this->BlogModel = new BlogModel;
-    }
 
+        $this->loadModel('CartModel');
+        $this->cartModel = new CartModel;
+    }
 
     public function index()
     {
@@ -25,11 +27,16 @@ class ProductcategoryController extends BaseController
         $allPC = $this->PCModel->getData();
 
         $allblog = $this->BlogModel->getDataForIndex();
+        $countItems = $this->cartModel->getCountItems();
+        $total = $this->cartModel->getTotal();
 
         $this->view("index", [
             "allPC" => $allPC,
             "allProduct" => $allProduct,
             "allblog" => $allblog,
+            "countItems" => $countItems,
+            "total" => $total,
+
         ]);
     }
 
@@ -37,12 +44,16 @@ class ProductcategoryController extends BaseController
     {
         $pc_id = $_GET["pc_id"] ?? "1";
         $productByPC = $this->ProductModel->getDataByPCId($pc_id);
+        $total = $this->cartModel->getTotal();
 
         $allPC = $this->PCModel->getData();
 
         $this->view("product", [
             "allPC" => $allPC,
+            "total" => $total,
             "productByPC" => $productByPC,
+            "total" => $total,
+
         ]);
     }
 

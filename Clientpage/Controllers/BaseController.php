@@ -2,7 +2,8 @@
 
 
 
-class BaseController {
+class BaseController
+{
 
 
 
@@ -12,28 +13,26 @@ class BaseController {
 
 
 
-    public function view($viewPath, array $data = []) {
+    public function view($viewPath, array $data = [])
+    {
 
 
 
         foreach ($data as $key => $value) {
 
             $$key = $value;
-
         }
 
 
 
-        require (self::VIEW_FOLDER_NAME . '/'.str_replace('.', '/', $viewPath) . '.php');
-
+        require(self::VIEW_FOLDER_NAME . '/' . str_replace('.', '/', $viewPath) . '.php');
     }
 
 
 
-    public function loadModel($modelPath) {
+    public function loadModel($modelPath)
+    {
 
-        require (self::MODEL_FOLDER_NAME . '/' . $modelPath . '.php');
-
+        require(self::MODEL_FOLDER_NAME . '/' . $modelPath . '.php');
     }
-
 }

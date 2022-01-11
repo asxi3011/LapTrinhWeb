@@ -11,12 +11,17 @@ class BlogController extends BaseController
 
         $this->loadModel("BlogcategoryModel");
         $this->BCModel = new BlogcategoryModel;
+
+        $this->loadModel('CartModel');
+        $this->cartModel = new CartModel;
     }
 
     public function index()
     {
         $bc_id = $_GET["bc_id"] ?? null;
 
+        $total = $this->cartModel->getTotal();
+        $total = $this->cartModel->getTotal();
         $allBC = $this->BCModel->getData();
 
         if ($bc_id != null) {
@@ -27,6 +32,7 @@ class BlogController extends BaseController
 
         $this->view("blog", [
             "allBC" => $allBC,
+            "total" => $total,
             "blogByBC" => $blogByBC,
         ]);
     }
@@ -39,10 +45,12 @@ class BlogController extends BaseController
         $blog = $this->BlogModel->findById($bn_id);
 
         $author = $this->BlogModel->joinAuthor($author_id);
+        $total = $this->cartModel->getTotal();
 
         return $this->view("blog-details", [
             "blog" => $blog,
             "author" => $author,
+            "total" => $total,
         ]);
     }
 }
