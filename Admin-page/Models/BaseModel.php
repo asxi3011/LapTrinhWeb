@@ -15,9 +15,9 @@ class BaseModel extends Database
         $columns = implode(',', $select);
         $orderByString = implode(' ', $orderBys);
         if($orderByString) {
-            $sql = "SELECT ${columns} from ${table} WHERE ${where} ORDER BY ${orderByString} LIMIT ${limit}";
+            $sql = "SELECT ${columns} from `${table}` WHERE ${where} ORDER BY ${orderByString} LIMIT ${limit}";
         }else{
-            $sql = "SELECT ${columns} from ${table} WHERE ${where} LIMIT ${limit}";
+            $sql = "SELECT ${columns} from `${table}` WHERE ${where} LIMIT ${limit}";
         }
 
         //Tạo Prepared Statement
@@ -71,13 +71,15 @@ class BaseModel extends Database
 
     public function getSQL($sql)
     {  
+      
         //Tạo Prepared Statement
         $stmt = $this->conn->prepare($sql);
         //Thiết lập kiểu dữ liệu trả về
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         //Gán giá trị và thực thi
         $stmt->execute();
-        $data = $stmt->fetch();
+        $data = $stmt->fetchAll();
+    
         return $data;
     }
 

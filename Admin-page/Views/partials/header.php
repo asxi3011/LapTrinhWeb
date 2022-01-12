@@ -3,7 +3,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
+  <title>Trang quản trị Nikeshop</title>
   <!-- plugins:css -->
   
   
@@ -22,6 +22,6 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="public/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="public/images/favicon.png" />
+  <link rel="shortcut icon" href="public/images/logo_web.png" />
   
 </head>

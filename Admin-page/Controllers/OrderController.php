@@ -7,104 +7,41 @@ class OrderController extends BaseController
     public function __construct()
     {
         $this->loadModel("OrderModel");
-        $this->ProductModel = new OrderModel;
+        $this->OrderModel = new OrderModel;
     }
     
     public function index()
     {
-        //$product = $this->ProductModel->getData();
+        $order = $this->OrderModel->getData();
         $this->view("pages/orders/DanhSachDonHang", [
-          
+           "orders" => $order,
         ]);
     }
-    public function detailProduct(){
-        $product_id = $_GET['id'];
-        
-        $product = $this->ProductModel->getProduct($product_id);
-        $this->view("pages/SanPham/ChiTietSanPham",[
-            "product" =>$product,
+    public function detailOrder(){
+        $order_id = $_GET['id'];
+        $order = $this->OrderModel->getOrder($order_id);
+    
+        $this->view("pages/orders/ChiTietDonHang",[
+            "orders" =>$order,
         ]);
     }
-    public function handleProduct() 
+    public function successOrder() 
     {
-        $target_dir = "uploads/";
-        $action = isset($_POST["product_action"]) ? $_POST["product_action"] : "delete" ;
-        $uploadOk = 1;
-        if(isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["hinh"]["tmp_name"]);
-            if($check !== false) {
-              echo "File is an image - " . $check["mime"] . ".";
-              $uploadOk = 1;
-            } else {
-              echo "File is not an image.";
-              $uploadOk = 0;
-            }
-          }
-        switch($action){
-            case "add":
-                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                $data = [
-                    "pc_id"=> $_POST["category"],
-                    "product_name"=> $_POST["name"],
-                    "product_description"=> $_POST["description"],
-                     "product_img"=> $_FILES["hinh"]["name"],
-                     "quantity"=> $_POST["quantity"],
-                     "product_price"=> $_POST["price"],
-                ];
-                $this->ProductModel->insertProduct($data);
-                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
-                  } else {
-                    echo "Sorry, there was an error uploading your file.";
-                }
-                header("Location:index.php?controller=product&action=addProduct");
-                break;
-            case "update":
-                if($_FILES['hinh']['size'] != 0){
-                 
-                    $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                    $id = $_POST["id"];
-                    $data = [
-                        "pc_id"=> $_POST["category"],
-                        "product_name"=> $_POST["name"],
-                        "product_description"=> $_POST["description"],
-                        "product_img"=> $_FILES["hinh"]["name"],
-                        "product_price"=> $_POST["price"],
-                   
-                    ];
-                    $this->ProductModel->updateProduct($id,$data);
-                    if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                        echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
-                      } else {
-                        echo "Sorry, there was an error uploading your file.";
-                    }
-                    header("Location:index.php?controller=product");
-                   
-                }else{
-                    $id = $_POST["id"];
-                    $data = [
-                        "pc_id"=> $_POST["category"],
-                        "product_name"=> $_POST["name"],
-                        "product_description"=> $_POST["description"],                    
-                         "product_price"=> $_POST["price"],
-                     
-                    ];
-                    $this->ProductModel->updateProduct($id,$data);                  
-                    header("Location:index.php?controller=product");
-                }
-                break;
-             
-            
-            case "delete":
-                $id = $_GET["id"];  
-                $this->ProductModel->deleteProduct($id);
-                header("Location:index.php?controller=product");
-                break;
-            default:
-                break;
-        }
-       
-        
+        $id = $_GET["id"];
+        $data = [
+            "status"=> "done",
+        ];
+        $this->OrderModel->updateOrder($id,$data);                  
+        header("Location:index.php?controller=order");        
+    }
+    public function cancelOrder() 
+    {
+        $id = $_GET["id"];
+        $data = [
+            "status"=> "cancel",
+        ];
+        $this->OrderModel->updateOrder($id,$data);                  
+        header("Location:index.php?controller=order");        
     }
 
 

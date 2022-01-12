@@ -3,7 +3,7 @@
 class OrderModel extends BaseModel
 {
 
-    private $table = "order";
+    private $table = "orders";
 
     public function getData() {
         return $this->selectData($this->table);
@@ -23,17 +23,16 @@ class OrderModel extends BaseModel
     {
         return $this->insert($this->table, $data);
     }
-    public function updateProduct($id,$data)
+    public function updateOrder($id,$data)
     {
-        return $this->update($this->table,$data,"product_id=${id}");
+        return $this->update($this->table,$data,"id=${id}");
     }
     public function deleteProduct($id) 
     {
         return $this->delete($this->table,"product_id=${id}");
     }
-    public function getProduct($id){
-        $sql = "SELECT * FROM product LEFT JOIN product_category ON product.pc_id = product_category.pc_id  WHERE product_id =${id}";
-        
+    public function getOrder($id){
+        $sql = "SELECT * FROM orders JOIN order_detail ON orders.id = order_detail.order_id  WHERE orders.id =${id}";
         return $this->getSQL($sql);
     }
 }

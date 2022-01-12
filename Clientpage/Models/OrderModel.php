@@ -2,7 +2,7 @@
 class OrderModel extends BaseModel
 {
 
-    const TABLE = 'order';
+    const TABLE = 'orders';
 
     public function insertOrder($orderId, $cus_name, $address, $email, $phone, $total, $note)
     {
@@ -11,7 +11,7 @@ class OrderModel extends BaseModel
 
     public function findByIDClient($idClient)
     {
-        $sql = "SELECT * from `order` where order_id_client = '${idClient}'";
+        $sql = "SELECT * from `orders` where order_id_client = '${idClient}'";
         return $this->findOrder($sql);
     }
 }

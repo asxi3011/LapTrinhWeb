@@ -13,12 +13,7 @@
               <span class="menu-title">Quản lý bài viết</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="?controller=order">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Quản lý đơn hàng</span>
-            </a>
-          </li>
+     
 
           <li class="nav-item nav-category">Người dùng</li>
           <li class="nav-item">
@@ -63,6 +58,15 @@
               
               </ul>
             </div>
+          </li>
+          <li class="nav-item nav-category">Đơn hàng</li>
+          <li class="nav-item">
+            <a href="?controller=order" class="nav-link"  aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-clipboard-text"></i>
+              <span class="menu-title">Quản lý đơn hàng</span>
+              <i class="menu-arrow"></i> 
+            </a>
+          
           </li>
         </ul>
       </nav>

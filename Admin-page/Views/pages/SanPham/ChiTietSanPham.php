@@ -27,7 +27,7 @@
                                 Danh mục
                              </td>
                           <td class="py-1">
-                              <?=$product["pc_name"]?>
+                              <?=$product[0]["pc_name"]?>
                           </td>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@
                                 Hình ảnh
                              </td>
                           <td class="py-1">
-                            <img src="../Clientpage/public/img/<?=$product["product_img"]?>" />
+                            <img src="uploads/<?=$product[0]["product_img"]?>" />
                           </td>
                         </tr>
                         <tr>
@@ -43,7 +43,7 @@
                                Tên sản phẩm 
                              </td>
                           <td >
-                          <?=$product["product_name"]?>
+                          <?=$product[0]["product_name"]?>
                           </td>
                         </tr>
                         <tr>
@@ -59,7 +59,7 @@
                                 Giá
                              </td>
                           <td >
-                          <?=$product["product_price"]?>
+                          <?=$product[0]["product_price"]?>
                           </td>
                         </tr>
                         <tr>
@@ -67,7 +67,7 @@
                                 Tồn kho
                              </td>
                           <td >
-                          <?=$product["quantity"]?>
+                          <?=$product[0]["quantity"]?>
                           </td>
                         </tr>
                         <tr>
@@ -76,19 +76,19 @@
                              </td>
                           <td>
                             <textarea class="form-control"  style="height: 200px">
-                              <?=$product["product_description"]?>
+                              <?=$product[0]["product_description"]?>
                             </textarea>
                           </td>
                         </tr> 
                       </tbody>
                     </table>
                     <div class="d-flex flex-row-reverse">
-                        <a href="index.php?controller=product&action=editProduct&id=<?=$product["product_id"]?>" class="btn btn-sm btn-inverse-success btn-fw mt-3 mx-3">
+                        <a href="index.php?controller=product&action=editProduct&id=<?=$product[0]["product_id"]?>" class="btn btn-sm btn-inverse-success btn-fw mt-3 mx-3">
                         <div class="d-flex align-items-center">
                         <i class="mdi mdi-pencil mx-2"></i> Sửa sản phẩm
                         </div>
                         </a>
-                        <button class="btn btn-sm btn-inverse-danger btn-fw mt-3" data-bs-toggle="modal" data-bs-target="#modalDelete" data-bs-id="<?=$product["product_id"]?>">
+                        <button class="btn btn-sm btn-inverse-danger btn-fw mt-3" data-bs-toggle="modal" data-bs-target="#modalDelete" data-bs-id="<?=$product[0]["product_id"]?>">
                         <div class="d-flex align-items-center">
                         <i class="mdi mdi-delete mx-2 fs-5"></i> Xóa sản phẩm
                         </div>

@@ -42,7 +42,7 @@
                         
                             </td>
                           <td class="py-1">
-                            <img src="../Clientpage/public/img/<?=$product["product_img"]?>" alt="">
+                            <img src="uploads/<?=$product["product_img"]?>" alt="">
                           
                           </td>
                           
@@ -60,7 +60,6 @@
                             <button class="btn btn-sm btn-rounded btn-inverse-danger mx-1" data-bs-toggle="modal" data-bs-target="#modalDelete" data-bs-id="<?=$product["product_id"]?>"> 
                                    <i class="mdi mdi-delete"></i>
                             </button>
-                       
                           </td>
                         </tr>
                         <?php endforeach; ?>  
