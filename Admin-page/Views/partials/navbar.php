@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +18,10 @@ include "header.php";
         </div>
         <div>
             <a class="navbar-brand brand-logo" href="index.php">
-                <img src="public/images/logo.svg" alt="logo" />
+                <img src="public/images/nike-97.jpg" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="public/index.php">
-                <img src="public/images/logo-mini.svg" alt="logo" />
+                <img src="public/images/nike-97.jpg" alt="logo" />
             </a>
         </div>
     </div>
@@ -318,3 +321,4 @@ include "header.php";
 
   <!-- partial -->
     <!-- partial:public/partials/_sidebar.php -->
+

@@ -1,82 +1,129 @@
-<?php include "../../partials/navbar.php"; ?>
-<?php include "../../partials/sidebar.php"; ?>
-<?php include "../../../data/data.php" ?>
-<!-- partial -->
-<div class="main-panel">
-  <div class="content-wrapper">
-    <div class="row">
-      <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <div class="header-table">
-              <h4 class="card-title">Quản lý bài viết</h4>
-              <button class="btn-add" onclick="window.location.href='./post-add.php'">Thêm bài viết</button>
+
+<?php include "Views/partials/navbar.php"; ?>
+    <?php include "Views/partials/sidebar.php"; ?>
+
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Danh sách bài viết</h4>
+                  <a href="index.php?controller=post&action=addblog" class="btn btn-sm btn-inverse-success btn-fw">
+                    <div class="d-flex align-items-center">
+                      <i class="mdi mdi mdi-floor-plan mx-2 fs-5"></i> Thêm mới
+                    </div>
+                  </a>
+                  <div class="table-responsive mt-3">
+                    <table id="table_ListProduct" class="table table-striped">
+                      <thead>
+                        <tr>
+                          
+                          <th>
+                            ID Bài viết
+                          </th>
+                          <th>
+                            Hình ảnh
+                          </th>
+                          <th>
+                            Tên bài viết
+                          </th>
+                          <th>
+                            Ngày đăng
+                          </th>
+                       
+                          <th class="text-center">
+                            Chức năng
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?php foreach($data["blogs"] as $blog) : ?>
+                        <tr>
+                            <td>
+                            
+                            <?=$blog["bn_id"]?>
+                        
+                            </td>
+                          <td class="py-1">
+                            <img src="../Clientpage/public/img/<?=$blog["bn_img"]?>" alt="">
+                          
+                          </td>
+                          
+                          <td>
+                           <?=$blog["bn_title"]?>
+                          </td>
+                          <td>
+                           <?=$blog["date_posted"]?>
+                          </td>
+                         
+                          <td class="text-center ">
+                            <a href="index.php?controller=post&action=editPost&id=<?=$blog["bn_id"]?>" class="btn btn-sm btn-rounded btn-inverse-primary mx-1"> 
+                                   <i class="mdi mdi-pencil"></i>
+                            </a> 
+                            <a href="index.php?controller=post&action=detailPost&id=<?=$blog["bn_id"]?>" class="btn btn-sm btn-rounded btn-inverse-success  mx-1"> 
+                                   <i class="mdi mdi-book-open"></i>
+                            </a>
+                            <button class="btn btn-sm btn-rounded btn-inverse-danger mx-1" data-bs-toggle="modal" data-bs-target="#modalDelete" data-bs-id="<?=$blog["bn_id"]?>" > 
+                                   <i class="mdi mdi-delete"></i>
+                            </button>
+                       
+                          </td>
+                        </tr>
+                        <?php endforeach; ?>  
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>
-                      Hình ảnh
-                    </th>
-                    <th>
-                      Mã bài viết
-                    </th>
-                    <th>
-                      Tên bài viết
-                    </th>
-                    <th>
-                      Sửa
-                    </th>
-                    <th>
-                      Xóa
-                    </th>
-                    <th>
-                      Xem
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  foreach ($dataPost as $items) {
-                    echo "<tr>";
-                    foreach ($items as $key => $value) {
-                      if ($key == "image") {
-                        echo "<td class='py-1'>
-                                    <img src='../../public/images/$value' />
-                                  </td>";
-                      } else {
-                        echo "<td>$value</td>";
-                      }
-                    }
-                    echo '
-                                <td>
-                                  <a href="./post-edit.php" class="edit-icon">
-                                      <i class="mdi mdi-tooltip-edit"></i>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="#" class="edit-icon">
-                                      <i class="mdi mdi-delete-forever"></i>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="./post-info.php" class="edit-icon">
-                                      <i class="mdi mdi-account-search"></i>
-                                  </a>
-                                </td>
-                              ';
-                    echo "</tr>";
-                  }
-                  ?>
-                </tbody>
-              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+         
+       
+        <form name="frmDelete" method="post"></form>
+        <!-- partial -->
+      </div>
+   <!-- Modal -->
+      <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có thực sự muốn xóa ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger btn-delete">Xóa</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- content-wrapper ends -->
-  <!-- partial:../../partials/_footer.php -->
-  <?php include "../../partials/footer.php"; ?>
+  <?php include "Views/partials/footer.php"; ?>
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded',function(){
+    $('#table_ListProduct').DataTable();
+    
+    var test = document.getElementById('modalDelete');
+    var frmDelete = document.forms["frmDelete"];
+
+    test.addEventListener('show.bs.modal', function (event) {
+         var button = event.relatedTarget;
+        var recipient = button.getAttribute('data-bs-id');
+        var btn_delete = document.querySelector(".btn-delete");
+        btn_delete.onclick = function(){
+          frmDelete.action = `index.php?controller=post&action=handleProduct&id=${recipient}`;
+          frmDelete.submit();
+        }
+    })
+  });
+</script>
+

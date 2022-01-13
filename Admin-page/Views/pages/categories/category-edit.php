@@ -1,46 +1,48 @@
 
-    <?php include "../../partials/navbar.php"; ?>
-      <?php include "../../partials/sidebar.php"; ?>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
+<?php include "Views/partials/navbar.php"; ?>
+<?php include "Views/partials/sidebar.php"; ?>
+<!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="home-tab">
           <div class="row">
-          <div class="col-lg-8 grid-margin stretch-card ml-32">
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                    <div class="header-table">
-                        <h4 class="card-title">Sửa danh mục</h4>
-                        <button href="./category-add.php" class="btn-add" onclick="window.location.href='./categories-manager.php'">Sửa</button>
+                  <h4 class="card-title">Sửa danh mục</h4>
+                  <form class="forms-sample" action="index.php?controller=postcategory&action=handler" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="actionCate" class="d-none" value="update">
+                    <div class="form-group">
+                      <label for="">ID Danh Mục</label>
+                      <input readonly="readonly" retype="text" name="id" class="form-control" value="<?= $data["find"]["bc_id"] ?>">
                     </div>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                      <tr>
-                          <th>Header</th>
-                          <th>Input</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Danh mục</td>
-                          <td>
-                            <input type="text" placeholder="Nhập tên" name="name" required="required" class="td-input" value="">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Số lượng</td>
-                          <td>
-                            <input type="number" placeholder="Nhập mã" name="id" required="required" class="td-input" type="number" min="1" step="1" value="1">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="form-group">
+                      <label for="">Tên Danh Mục</label>
+                      <input type="text" name="bc_name" class="form-control" value="<?= $data["find"]["bc_name"] ?>">
+                    </div>
+                    
+                    <a href="index.php?controller=postcategory" class="btn btn-secondary me-2 text-dark">Hủy</a>
+                    <button type="submit" class="btn btn-primary me-2 text-light">Lưu thay đổi</button>
+
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.php -->
-        <?php include "../../partials/footer.php"; ?>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+
+
+
+
+
+  <!-- partial -->
+</div>
+
+
+<?php include "Views/partials/footer.php"; ?>

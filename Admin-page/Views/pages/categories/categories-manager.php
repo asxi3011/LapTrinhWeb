@@ -1,94 +1,110 @@
 
-  
- <?php include "../../partials/navbar.php"; ?>
-  <?php include "../../partials/sidebar.php"; ?>
-  <?php include '../../../data/data.php'; ?>
-  <!-- <?php include "../../../data/session.php";
-    $categories = getCategories();
-  ?>   -->
-    <!-- partial -->
-    <div class="main-panel">
-      <div class="content-wrapper">
-        <div class="row">
-          <div class="col-lg-8 grid-margin stretch-card ml-32">
-            <div class="card">
-              <div class="card-body">
-                <div class="header-table">
-                  <h4 class="card-title">Quản lý danh mục</h4>
-                  <button class="btn-add" onclick="window.location.href='../categories/category-add.php'">Thêm danh mục</button>
-                </div>
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Danh mục</th>
-                        <th>Số lượng</th>
-                        <th>Sửa</th>
-                        <th>Xóa</th>
-                        <th>Xem</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      foreach ($dataCategory as $items) {
-                        echo "<tr>";
-                        foreach ($items as $key => $value) {
-                          echo "<td>$value</td>";
-                        }
-                        echo '
-                                <td>
-                                  <a href="./category-edit.php" class="edit-icon">
-                                      <i class="mdi mdi-tooltip-edit"></i>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="#" class="edit-icon">
-                                      <i class="mdi mdi-delete-forever"></i>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="./cate-info.php" class="edit-icon">
-                                      <i class="mdi mdi-account-search"></i>
-                                  </a>
-                                </td>
-                              ';
-                        echo "</tr>";
-                      }
-                      ?>
-                      <!-- <?php foreach ($categories as $item) { ?>
+<?php include "Views/partials/navbar.php"; ?>
+    <?php include "Views/partials/sidebar.php"; ?>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Danh Mục Bài Viết</h4>
+                  <a href="index.php?controller=postcategory&action=add" class="btn btn-sm btn-inverse-success btn-fw">
+                    <div class="d-flex align-items-center">
+                      <i class="mdi mdi-cube mx-2 fs-5"></i> Thêm mới
+                    </div>
+                  </a>
+                  <div class="table-responsive mt-3">
+                    <table id="table_ListProduct" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            ID
+                          </th>
+                          <th class="text-center">
+                            Tên Danh mục
+                          </th>
+                          
+                        </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?php foreach($data["allPC"] as $pc) : ?>
                         <tr>
                           <td>
-                            <?php echo $item["category_id"]; ?>
+                          <?=$pc["bc_id"]?>
                           </td>
-                          <td>
-                          <?php echo $item["category_quantity"]; ?>
+                          <td class="text-center">
+                        
+                          <?=$pc["bc_name"]?>
+                            
                           </td>
-                          <td>
-                            <a href="./category-edit.php?id=<?php echo $item["category_id"]; ?>" class="edit-icon">
-                                <i class="mdi mdi-tooltip-edit"></i>
-                            </a>
-                          </td>
-                          <td>
-                              <a href="#" class="edit-icon">
-                                  <i class="mdi mdi-delete-forever"></i>
-                              </a>
-                          </td>
-                          <td>
-                          <a href="./cate-info.php" class="edit-icon">
-                                      <i class="mdi mdi-account-search"></i>
-                                  </a>
+                          
+                          <td class="text-center ">
+                            <a class="btn btn-sm btn-rounded btn-inverse-primary mx-1" href="index.php?controller=postcategory&action=edit&id=<?= $pc["bc_id"] ?>"> 
+                                   <i class="mdi mdi-pencil"> </i>
+                            </a> 
+
+                
+                            <button class="btn btn-sm btn-rounded btn-inverse-danger mx-1" data-bs-toggle="modal" data-bs-target="#modalDelete" data-bs-id="<?=$pc["bc_id"]?>"> 
+                                  <i class="mdi mdi-delete text-danger" ></i>
+                            </button>
+                       
                           </td>
                         </tr>
-                        <?php } ?> -->
-                    </tbody>
-                  </table>
+                        <?php endforeach ?>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+              </div>
+            </div>
               </div>
             </div>
           </div>
         </div>
+    
       </div>
-      <!-- content-wrapper ends -->
-      <!-- partial:../../partials/_footer.php -->
-      <?php include "../../partials/footer.php"; ?>
-      
+
+      <form name="frmDelete" method="post"></form>
+        <!-- partial -->
+      </div>
+   <!-- Modal -->
+      <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có thực sự muốn xóa ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger btn-delete">Xóa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php include "Views/partials/footer.php"; ?>
+
+      <script>
+        document.addEventListener('DOMContentLoaded',function(){
+    $('#table_ListProduct').DataTable();
+    
+    var test = document.getElementById('modalDelete');
+    var frmDelete = document.forms["frmDelete"];
+
+    test.addEventListener('show.bs.modal', function (event) {
+         var button = event.relatedTarget;
+        var recipient = button.getAttribute('data-bs-id');
+        var btn_delete = document.querySelector(".btn-delete");
+        btn_delete.onclick = function(){
+          frmDelete.action = `index.php?controller=postcategory&action=handler&id=${recipient}`;
+          frmDelete.submit();
+        }
+    })
+  });
+      </script>
+
+
