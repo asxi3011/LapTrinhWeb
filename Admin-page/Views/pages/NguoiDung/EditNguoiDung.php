@@ -1,5 +1,5 @@
-<?php include "../../partials/navbar.php"; ?>
-    <?php include "../../partials/sidebar.php"; ?>
+<?php include "Views/partials/navbar.php"; ?>
+    <?php include "Views/partials/sidebar.php"; ?>
 
       <!-- partial -->
       <div class="main-panel">
@@ -12,45 +12,27 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Sửa người dùng</h4>
-                  <form class="forms-sample" action="taonguoidung.php" method="POST">
-                    <div class="form-group">
-                      <label for="inputUser">Tài khoản</label>
-                      <input type="text" name="user" class="form-control" value="admin" id="inputUser" placeholder="Username">
+                  <form class="forms-sample" action="index.php?controller=user&action=handleUser" method="POST">
+                  <input type="text" name="user_action" class="d-none" value="update">
+                  <div class="form-group">
+                      <label for="inputPWD">ID sản phẩm</label>
+                      <input type="text" name="id" class="form-control" value="<?= $data["find"]["user_id"] ?>" id="inputPWD" placeholder="Nhập ID người dùng" readonly>
+                    </div>
+                    
+                  <div class="form-group">
+                      <label for="inputUser">Email</label>
+                      <input type="email" name="email" class="form-control" value="<?= $data["find"]["email"] ?>"vaid="inputAccount" placeholder="Nhập email">
                     </div>
                    
                     <div class="form-group">
                       <label for="inputPWD">Mật khẩu</label>
-                      <input type="password" name="pwd" class="form-control" value="1234" id="inputPWD" placeholder="Password">
+                      <input type="password" name="password" class="form-control" value="<?= $data["find"]["password"] ?>"id="inputPWD" placeholder="Nhập password">
                     </div>
-
-                    
                     <div class="form-group">
                       <label for="inputName">Họ Tên</label>
-                      <input type="text" name="name" class="form-control" value="Say Dậu" id="inputName" placeholder="Họ Tên">
+                      <input type="text" name="user_name" class="form-control" value="<?= $data["find"]["user_name"] ?>"id="inputName" placeholder="Nhập họ tên">
                     </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Địa chỉ</label>
-                      <input type="text" name="address" class="form-control" value="1200 Việt Nam" id="inputAddress" placeholder="Nhập Địa chỉ">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPhone">Số điện thoại</label>
-                      <input type="text" name="phone" class="form-control" value="09090909" id="inputPhone" placeholder="Nhập số điện thoại">
-                    </div>
-                    <div class="form-group">
-                      <label >Hình đại diện</label>
-                      <input type="file" name="file" id="avatar_user" class="form-control w-25" >
-                      <label class="my-3" for="avatar_user">conmeo.jpg</label>
-                   
-                      <div class="">
-                        
-                          <img class="img-preview" src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.6435-9/80569696_2579129398984180_5987193047803232256_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_ohc=QXy24SSFYJgAX94WrQ9&_nc_ht=scontent.fsgn2-2.fna&oh=79acd6b511f7246b8756b14f2e196b86&oe=61B0A473" alt="">
-                      </div>
-
-                      
-                    </div>
-                    
-                    <a href="DanhSachNguoiDung.php" class="btn btn-secondary me-2 text-dark">Hủy</a>
-                    <button type="button" class="btn btn-success me-2 text-light">Lưu thay đổi</button>
+                    <input type="submit" class="btn btn-primary me-2 text-light" value="Sửa thông tin">
                    
                   </form>
                 </div>
@@ -58,12 +40,9 @@
             </div>
                   </div>
               </div>
-            </div>
-          </div>
-        </div>
         <!-- content-wrapper ends -->
          
      
       </div>
  
-      <?php include "../../partials/footer.php"; ?>
+      <?php include "Views/partials/footer.php"; ?>
